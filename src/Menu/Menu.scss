@@ -1,0 +1,266 @@
+.total {
+    height: 650px;
+    transition: 1s;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: flex;
+
+    .menu {
+        width: 260px;
+        height: 650px;
+        border-radius: 20px 0 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        background-color: #081224;
+        color: white;
+        position: relative;
+        transition: 1s;
+        overflow: hidden;
+        user-select: none;
+
+        button {
+            border: none;
+            cursor: pointer;
+            user-select: none;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // border: solid 1px white;
+        }
+
+        .container {
+            width: 100%;
+            height: 580px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 26px;
+            border-radius: 12px;
+            // border: solid 2px white;
+            padding: 10px 0;
+            transition: .6s;
+
+            .myImage {
+                width: 145px;
+                height: 120px;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: 2s ease-out;
+                user-select: none;
+
+                &:hover {
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                }
+            }
+
+
+
+            button {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 50px;
+                gap: 10px;
+                transition: .6s;
+                color: #616f77;
+                // border: solid 1px white;
+                justify-content: flex-start;
+                transition: .6s;
+
+                h1 {
+                    font-size: 15px;
+                }
+            }
+
+            .proVersion {
+                width: 140px;
+                height: 350px;
+                border-radius: 10px;
+                background-color: transparent;
+                border: solid 1px white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 10px;
+                text-align: center;
+                gap: 20px;
+
+                .proVersionContainer {
+                    border-width: 0;
+                }
+
+                .discoverProButton {
+                    width: 120px;
+                    height: 40px;
+                    background-color: white;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    text-align: center;
+                    font-weight: 600;
+                    padding: 0;
+                    justify-content: center;
+                    transition: .6s;
+                }
+            }
+
+        }
+
+        .forImage {
+            gap: 10px;
+            padding: 0;
+
+            h1 {
+                font-size: 16px;
+                color: white;
+            }
+        }
+
+        .topButtons {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: red;
+            top: 10px;
+            left: 10px;
+        }
+
+        .yellow {
+            background-color: yellow;
+            top: 10px;
+            left: 35px;
+        }
+
+        .green {
+            background-color: green;
+            top: 10px;
+            left: 60px;
+        }
+
+    }
+
+
+    .containerRightPart {
+        position: relative;
+
+        .rightPart {
+            width: 20px;
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 20px 20px 0;
+            background-color: #081224;
+            transition: 1s;
+            user-select: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            .rightTop {
+                width: 100%;
+                height: 30px;
+                border-radius: 0 20px 0 0;
+
+                .filledPanel {
+                    height: 30px;
+                    border-radius: 0 20px 0 0;
+                    // border: solid 2px white;
+                    transition: 1s;
+                    justify-content: flex-end;
+                    user-select: none;
+                }
+
+                .filledPanel1 {
+                    background-color: #57A0D2;
+                }
+
+                .filledPanel2 {
+                    background-color: #ff4c4c;
+                }
+
+                .filledPanel3 {
+                    background-color: #99ff99;
+                }
+
+                .filledPanel4 {
+                    background-color: #FFB52E;
+                }
+
+                .filledPanel5 {
+                    background-color: #800080;
+                }
+
+                .filledPanel6 {
+                    background-color: #741d1d;
+                }
+
+                .filledPanel7 {
+                    background-color: #1d741d;
+                }
+            }
+
+            .rightBottom {
+                width: 100%;
+                height: 600px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+                padding: 10px;
+                color: white;
+
+                .openingItemContainer {
+                    width: 100%;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .messagesContainer {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        .active {
+            width: 500px;
+            transition: 1s;
+        }
+    }
+
+}
+
+@keyframes proVersionAnimation {
+    0% {
+        border: solid 4px red;
+        border-top-width: 100%;
+    }
+
+    25% {
+        border-top-width: 100%;
+        border-right-width: 100%;
+    }
+
+    50% {
+        border-top-width: 100%;
+        border-right-width: 100%;
+        border-bottom-width: 100%;
+    }
+
+    100% {
+        border-top-width: 100%;
+        border-right-width: 100%;
+        border-bottom-width: 100%;
+        border-left-width: 100%;
+    }
+}
