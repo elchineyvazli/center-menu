@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/center-menu/static/css/main.84be3c0d.css",
+    "main.js": "/center-menu/static/js/main.e0904aba.js",
+    "static/media/murad4.png": "/center-menu/static/media/murad4.ced6cb3a01a165d549e7.png",
+    "static/media/orhanGazi.png": "/center-menu/static/media/orhanGazi.344244addb1ee26cbc72.png",
+    "static/media/abdulhamid2.png": "/center-menu/static/media/abdulhamid2.6470e3c834e682d775ea.png",
+    "static/media/sultanSulaiman.jpeg": "/center-menu/static/media/sultanSulaiman.4be8228774df270bffed.jpeg",
+    "static/media/mehmetTheConqueror.jpeg": "/center-menu/static/media/mehmetTheConqueror.9fbd842f256db79dbd19.jpeg",
+    "static/media/thunderboldTheBayezid.jpeg": "/center-menu/static/media/thunderboldTheBayezid.1e608e52c84d4a9c5cc1.jpeg",
+    "static/media/yavuzSoltanSalim.jpeg": "/center-menu/static/media/yavuzSoltanSalim.bf51ca561cf6babae83f.jpeg",
+    "static/media/meWithBro.jpg": "/center-menu/static/media/meWithBro.dbc46e9c534219f025a2.jpg",
+    "index.html": "/center-menu/index.html",
+    "main.84be3c0d.css.map": "/center-menu/static/css/main.84be3c0d.css.map",
+    "main.e0904aba.js.map": "/center-menu/static/js/main.e0904aba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84be3c0d.css",
+    "static/js/main.e0904aba.js"
+  ]
+}
