@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import PopupForProVersion from '../components/PopupForProVersion/PopupForProVersion';
 import { AppContext } from '../AppContext/AppContext';
 import PopupForInfo from '../components/PopupForInfo/PopupForInfo';
+import KingsSlider from './../components/KingsSlider/KingsSlider';
 
 function App() {
   let [isShow, setIsShow] = useState(false)
@@ -13,12 +14,21 @@ function App() {
     setIsShow(!isShow)
   }
 
-  const { clickCancelFunction, clickYesFunction, clickCancel, proButton, showPopupInfo, noShowPopupInfo, showPopupInfoFunction, noShowPopupInfoFunction } = useContext(AppContext)
+  const {
+    clickCancelFunction,
+    clickYesFunction,
+    clickCancel,
+    proButton,
+    showPopupInfo,
+    noShowPopupInfo,
+    showPopupInfoFunction,
+    noShowPopupInfoFunction
+  } = useContext(AppContext)
 
   return (
     <div className='all'>
       <PopupForInfo
-        displayValue={showPopupInfo & !noShowPopupInfo ? "flex" : "none"}
+        displayValue={showPopupInfo ? "flex" : "none"}
         widthValueInside={showPopupInfo ? "350px" : "0"}
         heightValueInside={showPopupInfo ? "300px" : "0"}
         opacityValueInside={showPopupInfo ? 1 : 0}
@@ -42,6 +52,7 @@ function App() {
         functionValueForClosing={() => showFunction()}
         infoButtonFunctionValue={() => showPopupInfoFunction()}
       />
+      <KingsSlider />
     </div>
   );
 }

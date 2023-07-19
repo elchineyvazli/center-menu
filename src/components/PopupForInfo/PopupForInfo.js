@@ -23,7 +23,8 @@ const PopupForInfo = ({ displayValue,
             style={{
                 width: widthValuePopup,
                 height: heightValuePopup,
-                opacity: opacityValuePopup
+                opacity: opacityValuePopup,
+                display: displayValue
             }}
         >
             <div

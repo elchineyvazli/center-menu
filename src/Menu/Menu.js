@@ -12,12 +12,20 @@ import { AppContext } from '../AppContext/AppContext'
 
 //! Kings' image
 
+import king1 from '../images/mehmetTheConqueror.jpeg'
+import king2 from '../images/sultanSulaiman.jpeg'
+import king3 from '../images/murad4.png'
+import king4 from '../images/yavuzSoltanSalim.jpeg'
+import king5 from '../images/abdulhamid2.png'
+import king6 from '../images/orhanGazi.png'
+
 import Activity from '../components/Activity/Activity'
 import Messages from './../components/Messages/Messages';
 import Statistics from './../components/Statistics/Statistics';
 import Info from '../components/Info/Info'
 import Kings from './../components/Kings/Kings';
 import Healthy from './../components/Healthy/Healthy';
+import KingCard from './../components/KingCard/KingCard';
 
 const Menu = ({ displayValue, opacityValue, functionValueForClosing, infoButtonFunctionValue }) => {
 
@@ -25,6 +33,7 @@ const Menu = ({ displayValue, opacityValue, functionValueForClosing, infoButtonF
     // console.log(refButtonsArr);
 
     const [redButton, setRedButton] = useState(false)
+    const [forKings, setForKings] = useState(false)
     const [imageClicked, setImageClicked] = useState(false)
     const [menuHeight, setMenuHeight] = useState(650)
 
@@ -196,6 +205,25 @@ const Menu = ({ displayValue, opacityValue, functionValueForClosing, infoButtonF
     const [hoverProVersion, setHoverProVersion] = useState(false)
 
     const { clickYes, proButton, proButtonFunction } = useContext(AppContext)
+
+    function forKingsFunc() {
+        setForKings(!forKings)
+    }
+
+    const [kingCardClick1, setKingCardClick1] = useState(false)
+    const [kingCardClick2, setKingCardClick2] = useState(false)
+    const [kingCardClick3, setKingCardClick3] = useState(false)
+    const [kingCardClick4, setKingCardClick4] = useState(false)
+    const [kingCardClick5, setKingCardClick5] = useState(false)
+    const [kingCardClick6, setKingCardClick6] = useState(false)
+
+    const [kingCardHover1, setKingCardHover1] = useState(false)
+    const [kingCardHover2, setKingCardHover2] = useState(false)
+    const [kingCardHover3, setKingCardHover3] = useState(false)
+    const [kingCardHover4, setKingCardHover4] = useState(false)
+    const [kingCardHover5, setKingCardHover5] = useState(false)
+    const [kingCardHover6, setKingCardHover6] = useState(false)
+
 
     return (
         <div
@@ -397,7 +425,7 @@ const Menu = ({ displayValue, opacityValue, functionValueForClosing, infoButtonF
                             width: !button2 && ((menuHeight === 200) ? "0" : "20px"),
                             backgroundColor: clickYes && "#edc967"
                         }}
-                        className={button2 ? "rightPart active" : "rightPart"}>
+                        className={button2 ? "kingsContainer rightPart active" : "kingsContainer rightPart"}>
                         <div className="rightTop">
                             <div
                                 className="filledPanel filledPanel2"
@@ -408,23 +436,125 @@ const Menu = ({ displayValue, opacityValue, functionValueForClosing, infoButtonF
                             </div>
                         </div>
                         <div
-                            className="rightBottom"
+                            className="kingsContainerBottom rightBottom"
                             style={{
-                                gap: "10px"
-                            }}
-                        >{button2 &&
-                            arr.filter(item => item.id === 2).map(item => (
-                                <div className='openingItemContainer kingsContainer'>
-                                    <Info
-                                        colorValue={item.color}
-                                        h1Value={item.h1}
-                                        pValue={item.p}
-                                    />
-                                    <Kings />
-
-                                </div>
-                            ))
-                            }</div>
+                                gap: "10px",
+                            }}>
+                            {button2 &&
+                                arr.filter(item => item.id === 2).map(item => (
+                                    <div className='openingItemContainer kingsContainer'>
+                                        <Info
+                                            colorValue={item.color}
+                                            h1Value={item.h1}
+                                            pValue={item.p}
+                                            heightValue={100}
+                                        />
+                                        <div className='kingsInside'>
+                                            <button className='kingsButton' onClick={() => forKingsFunc()}>
+                                                <div
+                                                    className="kingLine kingLine1"
+                                                    style={{
+                                                        transform: `rotate(${forKings ? "45" : "0"}deg)`
+                                                    }}
+                                                ></div>
+                                                <div
+                                                    className="kingLine kingLine2"
+                                                    style={{
+                                                        transform: `rotate(${forKings ? "-45" : "0"}deg)`
+                                                    }}
+                                                ></div>
+                                            </button>
+                                            {
+                                                <>
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king1}
+                                                        kingNameValue="Mehmet the Conqueror"
+                                                        classNameValue="kingCard1"
+                                                        topValue={forKings ? "30" : "150"}
+                                                        hoverValue={kingCardHover1}
+                                                        mouseEnterValue={() => setKingCardHover1(true)}
+                                                        mouseLeaveValue={() => setKingCardHover1(false)}
+                                                        clickValue={kingCardClick1 ? true : false}
+                                                        hoverWidthValue={kingCardHover1 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover1 ? "fit-content" : "0"}
+                                                    />
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king2}
+                                                        kingNameValue="Uthman Gazi"
+                                                        classNameValue="kingCard2"
+                                                        topValue={forKings ? "90" : "150"}
+                                                        rightValue={forKings ? "60" : "190"}
+                                                        hoverValue={kingCardHover2}
+                                                        mouseEnterValue={() => setKingCardHover2(true)}
+                                                        mouseLeaveValue={() => setKingCardHover2(false)}
+                                                        clickValue={kingCardClick2 ? true : false}
+                                                        hoverWidthValue={kingCardHover2 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover2 ? "fit-content" : "0"}
+                                                    />
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king3}
+                                                        kingNameValue="Murad IV"
+                                                        classNameValue="kingCard3"
+                                                        bottomValue={forKings ? "90" : "150"}
+                                                        rightValue={forKings ? "60" : "190"}
+                                                        hoverValue={kingCardHover3}
+                                                        mouseEnterValue={() => setKingCardHover3(true)}
+                                                        mouseLeaveValue={() => setKingCardHover3(false)}
+                                                        clickValue={kingCardClick3 ? true : false}
+                                                        hoverWidthValue={kingCardHover3 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover3 ? "fit-content" : "0"}
+                                                    />
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king4}
+                                                        kingNameValue="Yavuz Soltan Salim"
+                                                        classNameValue="kingCard4"
+                                                        bottomValue={forKings ? "30" : "150"}
+                                                        hoverValue={kingCardHover4}
+                                                        mouseEnterValue={() => setKingCardHover4(true)}
+                                                        mouseLeaveValue={() => setKingCardHover4(false)}
+                                                        clickValue={kingCardClick4 ? true : false}
+                                                        hoverWidthValue={kingCardHover4 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover4 ? "fit-content" : "0"}
+                                                    />
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king5}
+                                                        kingNameValue="Mehmed III"
+                                                        classNameValue="kingCard5"
+                                                        bottomValue={forKings ? "90" : "150"}
+                                                        leftValue={forKings ? "60" : "190"}
+                                                        hoverValue={kingCardHover5}
+                                                        mouseEnterValue={() => setKingCardHover5(true)}
+                                                        mouseLeaveValue={() => setKingCardHover5(false)}
+                                                        clickValue={kingCardClick5 ? true : false}
+                                                        hoverWidthValue={kingCardHover5 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover5 ? "fit-content" : "0"}
+                                                    />
+                                                    <KingCard
+                                                        aboutValue="Card1"
+                                                        imageValue={king6}
+                                                        kingNameValue="Soltan Abdulaziz"
+                                                        classNameValue="kingCard6"
+                                                        topValue={forKings ? "90" : "150"}
+                                                        leftValue={forKings ? "60" : "190"}
+                                                        hoverValue={kingCardHover6}
+                                                        mouseEnterValue={() => setKingCardHover6(true)}
+                                                        mouseLeaveValue={() => setKingCardHover6(false)}
+                                                        clickValue={kingCardClick6 ? true : false}
+                                                        hoverWidthValue={kingCardHover6 ? "fit-content" : "0"}
+                                                        hoverHeightValue={kingCardHover6 ? "fit-content" : "0"}
+                                                    />
+                                                </>
+                                            }
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
                     </div>
 
                     <div

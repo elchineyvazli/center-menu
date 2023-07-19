@@ -1,19 +1,85 @@
+import { useEffect } from 'react'
 import './KingCard.scss'
 
-const KingCard = ({ h1Value, imageValue, kingNameValue }) => {
+const KingCard = ({
+    aboutValue,
+    imageValue,
+    kingNameValue,
+    classNameValue,
+    topValue,
+    bottomValue,
+    leftValue,
+    rightValue,
+    widthValue,
+    heightValue,
+    borderRadiusValue,
+    clickFuncValue,
+    clickValue,
+    mouseLeaveValue,
+    mouseEnterValue,
+    hoverValue,
+    hoverWidthValue,
+    hoverHeightValue,
+    backgroundColorValue
+}) => {
+    useEffect(() => {
+        console.log(clickValue);
+    }, [])
     return (
-        <div className='kingCard'>
-            <div className="insideKingCard">
-                <h1 className='kingCardH1'>{h1Value}</h1>
-                <div className="middleKingCard">
-                    <div className="kingCardFilledBar"></div>
-                </div>
-                <div className="forImageInKingCard">
-                    <img className='kingImage' src={imageValue} alt="sekil yoxdur" />
-                </div>
-                <button className='kingCardButton'>{kingNameValue}</button>
+        <div
+            className={`kingCard ${classNameValue}`}
+            onClick={clickFuncValue}
+            style={{
+                width: `${widthValue}px`,
+                height: `${heightValue}px`,
+                top: `${topValue}px`,
+                bottom: `${bottomValue}px`,
+                left: `${leftValue}px`,
+                right: `${rightValue}px`,
+                borderRadius: `${borderRadiusValue}px`
+            }}
+            onMouseEnter={mouseEnterValue}
+            onMouseLeave={mouseLeaveValue}
+        >
+            <div
+                className="kingCardInside"
+            >
+                {
+                    hoverValue &&
+                    <>
+                        <div
+                            className="blackBg"
+                            style={{
+                                backgroundColor: `rgba(${backgroundColorValue})`
+                            }}>
+                        </div>
+                        <div
+                            className='kingCardHover'
+                            style={{
+                                width: `${hoverWidthValue}`,
+                                height: `${hoverHeightValue}`,
+                            }}
+                        >{kingNameValue}</div>
+                    </>
+                }
+                {
+                    clickValue ?
+                        <>
+                            <p className='kingCardAbout'>{aboutValue}</p>
+                        </>
+                        :
+                        <div className="forImageInKingCard">
+                            <div
+                                className='kingImage'
+                                style={{
+                                    backgroundImage: `url(${imageValue})`
+                                }}>
+                            </div>
+                        </div>
+                }
+
             </div>
-        </div>
+        </div >
     )
 }
 

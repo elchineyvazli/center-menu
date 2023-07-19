@@ -4,9 +4,18 @@ import king2 from '../../images/sultanSulaiman.jpeg'
 import king3 from '../../images/thunderboldTheBayezid.jpeg'
 import king4 from '../../images/yavuzSoltanSalim.jpeg'
 import KingCard from '../KingCard/KingCard';
-const Kings = () => {
+const Kings = ({
+    widthValue,
+    heightValue
+}) => {
     return (
-        <div className='kings'>
+        <div
+            className='kings'
+            style={{
+                width: `${widthValue}px`,
+                height: `${heightValue}px`,
+            }}
+        >
             <KingCard
                 h1Value="Card1"
                 imageValue={king1}
@@ -15,7 +24,7 @@ const Kings = () => {
             <KingCard
                 h1Value="Card1"
                 imageValue={king2}
-                kingNameValue=""
+                kingNameValue="Uthman Gazi"
             />
             <KingCard
                 h1Value="Card1"
@@ -35,37 +44,7 @@ const Kings = () => {
             <KingCard
                 h1Value="Card1"
                 imageValue={king2}
-                kingNameValue=""
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king3}
-                kingNameValue="Soltan Sulaiman"
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king4}
-                kingNameValue="Yavuz Soltan Salim"
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king1}
-                kingNameValue="Mehmet the Conqueror"
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king2}
-                kingNameValue=""
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king3}
-                kingNameValue="Soltan Sulaiman"
-            />
-            <KingCard
-                h1Value="Card1"
-                imageValue={king4}
-                kingNameValue="Yavuz Soltan Salim"
+                kingNameValue="Orhan Gazi"
             />
         </div>
     )
